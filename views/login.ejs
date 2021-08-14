@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/style_login.css">
+   
+</head>
+<body>
+<div class="container">
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-7 login-left">
+            </div>
+            <div class="col-5 mt-2">
+                <div>
+                    <% if(errors != "") { %>
+                        <% errors.forEach((item) => { %>
+                            <div class="alert alert-danger">
+                                <%- item %>
+                            </div>
+                        <% }); %>
+                    <% } %>
+                </div>
+                <form method="POST" action="/login">   
+                </form>
+                    <div id="main-on-container">
+                        <h1>Login</h1>
+                        <form id="register-form"  method="POST" action="/login">
+                            <div class="form-group">
+                                <label for="email">Email address:</label>
+                                <input type="email" class="form-control" id="email" name="email"  placeholder="Enter email" required>
+                            </div>
+                           
+                            <div class="form-group">
+                                <label for="password">Password:</label>
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                            </div>
+                            
+                            <div class="full-box">
+                                <label for="agreement" id="agreement-label">Esqueceu sua senha? <a href="#">Clique aqui</a></label>
+                            </div>
+                            <div class="full-box">
+                                <input type="submit" id="btn-login" value="Login" class="btn btn-primary">   
+                                             
+                            </div>
+                            <div class="text-between"> <center><strong>Venha ser Faceiro!</strong></center> <br>Caso ainda não tenha uma conta, registre-se e faça parte da Família Façaí. </div>
+                            <div class="full-box">
+                                 <a type="submit" id="btn-not" href="/register">Registrar-se</a>                  
+                            </div>
+                        </form>
+                    </div>
+
+                <hr>
+               
+                <div>
+                    retorna a <a href="/"> pagina principal</a>
+                </div>
+                <br><br>
+                
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
